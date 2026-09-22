@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>~~~Title Here~~~</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+
+    ~~~Cool Stuff Here~~~
+
+    </body>
+</html>

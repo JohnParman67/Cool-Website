@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Option</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <audio autoplay>
+            <source src="success.mp3" type="audio/mpeg">
+        </audio>
+        <h1>Lastly, we just need your info!</h1>
+        <input type="text" placeholder="Roblox or Fortnite">
+        <input type="text" placeholder="Enter Username">
+        <audio id="music">
+            <source src="ApplePay.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="startMusic()">Enter</button>
+        <script>
+        function startMusic() {
+            let audio = document.getElementById("music");
+            audio.play()
+            audio.addEventListener("ended", function() {
+                window.location.href="successful.html";
+            });
+        }
+        </script>
+    </body>
+</html>

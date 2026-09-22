@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purchase</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+        #virusPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #c00;
+            color: white;
+            padding: 30px;
+            border: 5px solid darkred;
+            z-index: 9999;
+        }
+        .fakePopup {
+            position: fixed;
+            background: red;
+            color: white;
+            padding: 15px;
+            border: 4px solid darkred;
+            font-family: Arial;
+            z-index: 10000;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+    <body class="successfully">
+        <audio autoplay>
+            <source src="success.mp3" type="audio/mpeg">
+        </audio>
+        <h1>Transaction Completed</h1>
+        <h1><i>$250.59 for your Robux</i></h1>
+        <h1>Thank you for shopping with us!</h1>
+        <a href="main.html">Home</a>
+        <div id="virusPopup">
+            <h2>VIRUS DETECTED!</h2>
+            <p>Your computer has been infected!</p>
+            <button onclick="removeVirus()">
+                Remove Virus
+            </button>
+        </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById("virusPopup").style.display = "block";
+            }, 2000);
+            function removeVirus() {
+                document.getElementById("virusPopup").style.display = "none";
+                for (let i = 0; i < 30; i++) {
+                    let popup = document.createElement("div");
+                    popup.className = "fakePopup";
+                    popup.innerHTML =
+                        "<h3>CRITICAL ERROR</h3>" +
+                        "<p>Virus detected!</p>" +
+                        "<button onclick='this.parentElement.remove()'>Close</button>";
+                    popup.style.left =
+                        Math.random() * 80 + "%";
+                    popup.style.top =
+                        Math.random() * 80 + "%";
+                    document.body.appendChild(popup);
+                }
+            }
+        </script>
+    </body>
+</html>

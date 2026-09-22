@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>  
+    <title>Click Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            cursor: pointer;
+            width: 200px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+            border-color: #007BFF;
+        }
+        #counter {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #333;
+        }
+        .redeem-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #28a745; /* Green */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .redeem-btn:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+        .redeem-btn:active {
+            background-color: #1e7e34; /* Even darker green on click */
+            transform: scale(0.98)}
+    </style>
+</head>
+<body>
+
+    <h1>Robux Clicker</h1>
+    <!-- Image to click -->
+    <img id="clickImage" src="tungtung.png" alt="Clickable Image">
+
+    <!-- Counter display -->
+    <div id="counter">Robux: 0</div>
+
+    <script>
+        (function() {
+            let count = 0; // Initialize counter
+            const img = document.getElementById('clickImage');
+            const counterDisplay = document.getElementById('counter');
+
+            // Ensure image loads before attaching event
+            img.addEventListener('load', () => {
+                console.log("Image loaded successfully.");
+            });
+
+            img.addEventListener('error', () => {
+                console.error("Error: 'something.png' not found.");
+                counterDisplay.textContent = "Image not found.";
+            });
+
+            // Increment counter on click
+            img.addEventListener('click', () => {
+                count++;
+                counterDisplay.textContent = `Robux: ${count}`;
+            });
+        })();
+    </script>
+    <br>
+       <a href="option.html" class="redeem-btn">Redeem</a><br><br>
+       <a href="main.html">Home</a>
+</body>
+</html>

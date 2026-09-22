@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #virusPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #c00;
+            color: white;
+            padding: 30px;
+            border: 5px solid darkred;
+            z-index: 9999;
+        }
+
+        .fakePopup {
+            position: fixed;
+            background: red;
+            color: white;
+            padding: 15px;
+            border: 4px solid darkred;
+            font-family: Arial;
+            z-index: 10000;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="virusPopup">
+
+        <h2>⚠️ VIRUS DETECTED!</h2>
+
+        <p>Your computer has been infected!</p>
+
+        <button onclick="removeVirus()">
+            Remove Virus
+        </button>
+
+    </div>
+
+
+    <script>
+
+        // Wait 2 seconds before showing the warning
+        setTimeout(function() {
+
+            document.getElementById("virusPopup").style.display = "block";
+
+        }, 2000);
+
+
+        // Create lots of fake popups
+        function removeVirus() {
+
+            document.getElementById("virusPopup").style.display = "none";
+
+            for (let i = 0; i < 30; i++) {
+
+                let popup = document.createElement("div");
+
+                popup.className = "fakePopup";
+
+                popup.innerHTML =
+                    "<h3>⚠️ CRITICAL ERROR</h3>" +
+                    "<p>Virus detected!</p>" +
+                    "<button onclick='this.parentElement.remove()'>Close</button>";
+
+                popup.style.left =
+                    Math.random() * 80 + "%";
+
+                popup.style.top =
+                    Math.random() * 80 + "%";
+
+                document.body.appendChild(popup);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

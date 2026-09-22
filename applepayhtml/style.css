@@ -1,0 +1,19 @@
+body {
+    background-image: url("https://wallpapercave.com/wp/irbvqB4.jpg");
+}
+*{
+    text-align:center;
+}
+h1{
+    background-color: LightBlue;
+}
+a:link, a:visited{
+    background-color: green;
+    color: black;
+    font-size: x-large;
+}
+table{
+    margin: 0 auto;
+    background-color: lightcoral;
+    font-size: 20px;
+}
